@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with django</title>
+</head>
+<body>
+    <h1>Liste des locataires</h1>
+    <style>
+      /* Add some style to the table */
+      table {
+        border-collapse: collapse;
+      }
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+    
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Adresse</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for locataire in locataires %}
+            <tr>
+                <td>{{locataire.nom}}</td>
+                <td>{{locataire.prenom}}</td>
+                <td>{{locataire.age}}</td>
+                <td>{{locataire.adresse}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>

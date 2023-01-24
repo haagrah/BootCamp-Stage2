@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1> Liste des personnes</h1>
+
+        <table>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>age</td>
+                <td>country</td>
+                <td>details</td>
+            </tr>
+            {% for values in people %}
+            <tr>
+                <td>{{values.id}}</td>
+                <td>{{values.name}}</td>
+                <td>{{values.age}}</td>
+                <td>{{values.country}}</td>
+                <td>{{values.details}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

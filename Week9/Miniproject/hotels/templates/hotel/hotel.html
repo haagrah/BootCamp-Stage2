@@ -1,0 +1,21 @@
+{% extends 'hotel/home.html' %}
+{% block main %}
+{% for hotel in hotels %}
+<div class="card" style="width: 35rem;">
+  <img src="{{hotel.image.url}}" class="card-img-top" alt="{{hotel.nom}}">
+  <div class="card-body">
+    <h5 class="card-title">Hotel : {{hotel.nom}}</h5>
+    <p class="card-text">Situation géographique : {{hotel.emplacement}}</p>
+    <p class="card-text"><small class="text-muted">{{hotel.description}}</small></p>
+    {% if hotel.disponible %}
+          <small class="btn btn-success mt-4 ms-5">Diponible</small>
+          {% else%}
+          <small class="btn btn-danger mt-4 ms-5">Ocuppé</small>
+          {% for reser in resers %}
+          <h6 class=" mt-2 text-muted">Libère le : {{reser.sortit}} par {{reser.user}}</h6>
+          {% endfor %}
+          {% endif %}
+  </div>
+</div>
+{% endfor %}
+{% endblock main %}
